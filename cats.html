@@ -13,18 +13,26 @@
 	
 	<script type="text/babel">
 	  class Animal extends React.Component {
+	    constructor(props) {
+		  super(props);
+		  this.state = {
+		    number: 2
+		  }
+		}
+		
 	    render() {
 		  return (
-			  <div>
-                This is a {this.props.type}.
-			  </div>
-		  );
+		    <div>
+			  <h1>{this.props.type} are great. I have {this.state.number} {this.props.type}.</h1>
+			</div>
+		  )
 		}
 	  }
 	  
-       ReactDOM.render(
-         <Animal type="cat" />, document.getElementById('app')
-       );
+	  ReactDOM.render(
+	    <Animal type="cats" />, document.getElementById('app')
+	  );
+	  
 	</script>
   </body>
 </html>
